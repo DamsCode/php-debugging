@@ -139,6 +139,7 @@ echo $login = login('john@example', 'pocahontas');
      foreach ($unacceptables as $unacceptable) {
          if (is_int(strpos($link, $unacceptable))) {
              $found = true;
+             break;
          }
      }
     if ($found) {
@@ -163,9 +164,10 @@ echo $login = login('john@example', 'pocahontas');
  $areTheseFruits = ['apple', 'bear', 'beef', 'banana', 'cherry', 'tomato', 'car'];
  $validFruits = ['apple', 'pear', 'banana', 'cherry', 'tomato'];
 //from here on you can change the code
- for($i=0; $i <= count($areTheseFruits); $i++) {
+ for($i=count($areTheseFruits)-1; $i > 0; $i--) {
      if(!in_array($areTheseFruits[$i], $validFruits)) {
          unset($areTheseFruits[$i]);
      }
     }
+
  var_dump($areTheseFruits);//do not change this
